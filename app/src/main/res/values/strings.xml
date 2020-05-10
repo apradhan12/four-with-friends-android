@@ -9,4 +9,5 @@
 
     <string name="hello_first_fragment">he know da lingo</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="drop">Drop Token</string>
 </resources>
