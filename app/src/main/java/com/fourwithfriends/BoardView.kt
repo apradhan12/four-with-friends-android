@@ -1,16 +1,12 @@
 package com.fourwithfriends
 
-import android.app.Activity
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.DisplayMetrics
-import android.util.TypedValue
-import android.view.Display
 import android.view.View
 import com.fourwithfriends.client.ClientModel
+import com.fourwithfriends.client.IClientModel
 import com.fourwithfriends.dto.PlayerColor
-import java.util.*
 
 const val TOKEN_DIAMETER = 0.95
 const val SCREEN_WIDTH = 0.9
@@ -38,7 +34,7 @@ class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         }
     }
 
-    var model: ClientModel = ClientModel()
+    var model: IClientModel = ClientModel()
     private val boardWidth = context.resources.getInteger(R.integer.board_width)
     private val boardHeight = context.resources.getInteger(R.integer.board_height)
 
