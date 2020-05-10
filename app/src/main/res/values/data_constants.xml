@@ -3,6 +3,6 @@
     <integer name="board_width">7</integer>
     <integer name="board_height">6</integer>
 <!--    <integer name="max_board_col">@{@integer/board_width - 1}</integer>-->
-    <integer name="token_diameter">150</integer>
-    <fraction name="screen_width">90%</fraction>
+<!--    <item name="token_diameter" format="float" type="dimen">95%</item>-->
+<!--    <item name="screen_width" format="float" type="dimen">90%</item>-->
 </resources>
