@@ -22,12 +22,20 @@ class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val orange: Paint = Paint()
     private val white: Paint = Paint()
     private val bgColor: Int = Color.rgb(105, 88, 41)
+    private val colorsMap = mapOf(PlayerColor.Blue to blue,
+        PlayerColor.Orange to orange,
+        PlayerColor.None to white)
 
     init {
         blue.color = Color.CYAN
         boardBgPaint.color = Color.rgb(255, 128, 0)
         orange.color = Color.rgb(255, 206, 0)
         white.color = Color.WHITE
+
+        for ((_, paint) in colorsMap) {
+            paint.isAntiAlias = true;
+            paint.isFilterBitmap = true;
+        }
     }
 
     var model: ClientModel = ClientModel()
@@ -44,11 +52,7 @@ class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         val board = model.board
         for (col in 0 until boardWidth) {
             for (row in 0 until boardHeight) {
-                val paint: Paint = when (board[col][row]!!) {
-                    PlayerColor.Blue -> blue
-                    PlayerColor.Orange -> orange
-                    PlayerColor.None -> white
-                }
+                val paint: Paint = colorsMap[board[col][row]!!] ?: error("Color not in map")
                 can.drawOval(convertCoords(col, row), paint)
             }
         }
