@@ -1,16 +1,39 @@
 package com.fourwithfriends
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.fourwithfriends.client.*
+import com.fourwithfriends.dto.PlayerColor
 import kotlinx.android.synthetic.main.activity_main.*
 
 class Connect4Activity : AppCompatActivity() {
+
+    private var model: IClientModel = ClientModel()
+    private lateinit var view: IClientView
+    private var controller = ClientControllerDelegate()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.connect4_activity)
         setSupportActionBar(toolbar)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("Desired fragment ID: " + R.id.GameFragment)
+        for (fragment in supportFragmentManager.fragments) {
+            println("Fragment id: " + fragment.id)
+            println("Frag name: $fragment")
+        }
+        view = supportFragmentManager.findFragmentById(R.id.GameFragment)!! as GameFragment
+        controller.setModel(model)
+        controller.setView(view)
+        view.setModel(model)
+        view.setController(controller)
     }
 
     /**
