@@ -2,6 +2,7 @@
 <resources>
     <integer name="board_width">7</integer>
     <integer name="board_height">6</integer>
+    <integer name="max_board_col">6</integer>
 <!--    <integer name="max_board_col">@{@integer/board_width - 1}</integer>-->
 <!--    <item name="token_diameter" format="float" type="dimen">95%</item>-->
 <!--    <item name="screen_width" format="float" type="dimen">90%</item>-->

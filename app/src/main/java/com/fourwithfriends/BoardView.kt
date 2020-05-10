@@ -43,6 +43,9 @@ class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         model.setBoardCell(0, 0, PlayerColor.Blue)
         val board = model.board
 //        println("here is board ${Arrays.deepToString(board)}")
+        println("Width: $width")
+        println("Display width: ${getDisplayDimensions().widthPixels}")
+        can.drawRect(0F, 0F, 1440F, 1440F, orange)
         for (col in 0 until boardWidth) {
             for (row in 0 until boardHeight) {
                 val paint: Paint = when (board[col][row]!!) {
@@ -50,9 +53,11 @@ class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     PlayerColor.Orange -> orange
                     PlayerColor.None -> white
                 }
-                can.drawOval(convertCoords(row, col), paint)
+                can.drawOval(convertCoords(col, row), paint)
             }
         }
+        println("Converted 0 0: " + convertCoords(0, 0))
+        println("Converted 3 5: " + convertCoords(3, 5))
 //        can.drawOval(0F, 0F, 100F, 100F, blue)
     }
 
@@ -64,16 +69,17 @@ class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         return displayMetrics
     }
 
-    private fun convertCoords(row: Int, col: Int): RectF {
+    private fun convertCoords(col: Int, row: Int): RectF {
         val boardWidthPx = width * SCREEN_WIDTH
         val boardXOffsetPx = (width - boardWidthPx) / 2
         val boardYOffsetPx = height * TOP_PADDING
         val cellWidthPx = boardWidthPx / boardWidth
+        println("Cell width: $cellWidthPx")
         return RectF(
-            (boardXOffsetPx + row * cellWidthPx).toFloat(),
-            (boardYOffsetPx + col * cellWidthPx).toFloat(),
-            (boardXOffsetPx + (row + 1) * cellWidthPx).toFloat(),
-            (boardYOffsetPx + (col + 1) * cellWidthPx).toFloat()
+            (boardXOffsetPx + col * cellWidthPx).toFloat(),
+            (boardYOffsetPx + row * cellWidthPx).toFloat(),
+            (boardXOffsetPx + (col + 1) * cellWidthPx).toFloat(),
+            (boardYOffsetPx + (row + 1) * cellWidthPx).toFloat()
         )
     }
 }

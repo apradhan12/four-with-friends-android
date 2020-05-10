@@ -11,7 +11,7 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="361dp"
         android:layout_height="43dp"
-        android:max="@integer/board_width"
+        android:max="@integer/max_board_col"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
