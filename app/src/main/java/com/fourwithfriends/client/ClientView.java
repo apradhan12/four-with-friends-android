@@ -1,7 +1,7 @@
-package client;
+package com.fourwithfriends.client;
 
-import dto.ConnectionState;
-import dto.PlayerColor;
+import com.fourwithfriends.dto.ConnectionState;
+import com.fourwithfriends.dto.PlayerColor;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -25,8 +25,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import static client.ClientModel.NUM_ROWS;
-import static client.ClientModel.NUM_COLUMNS;
+import static com.fourwithfriends.client.ClientModel.NUM_ROWS;
+import static com.fourwithfriends.client.ClientModel.NUM_COLUMNS;
 
 /**
  * Client code for FourWithFriends.
