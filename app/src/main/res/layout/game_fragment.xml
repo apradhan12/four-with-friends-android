@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/dropColumnInput"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="361dp"
         android:layout_height="43dp"
@@ -20,7 +20,53 @@
         android:id="@+id/boardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/dropColumnInput" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/hostIpInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/portNumberInput"
+        android:hint="@string/host_ip_text">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/portNumberInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/connectButton"
+        android:hint="@string/port_number_text">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_text"
+        app:layout_constraintBottom_toTopOf="@id/statusText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_text"
+        app:layout_constraintBottom_toTopOf="@id/dropButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/dropButton"
@@ -30,33 +76,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!--    <TableLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <TableRow-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-
-<!--        </TableRow>-->
-<!--        <TableRow-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-
-
-<!--            &lt;!&ndash;<Button-->
-<!--                android:id="@+id/button2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:text="Button"-->
-<!--                tools:layout_editor_absoluteX="312dp"-->
-<!--                tools:layout_editor_absoluteY="164dp" />&ndash;&gt;-->
-<!--        </TableRow>-->
-<!--    </TableLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
