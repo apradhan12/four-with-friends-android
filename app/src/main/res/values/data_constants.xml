@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="board_width">7</integer>
+    <integer name="board_height">6</integer>
+<!--    <integer name="max_board_col">@{@integer/board_width - 1}</integer>-->
+    <integer name="token_diameter">150</integer>
+    <fraction name="screen_width">90%</fraction>
+</resources>
