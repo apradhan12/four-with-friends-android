@@ -29,7 +29,5 @@
         android:id="@+id/GameFragment"
         android:name="com.fourwithfriends.GameFragment"
         android:label="Game Fragment"
-        tools:layout="@layout/game_fragment">
-
-    </fragment>
+        tools:layout="@layout/game_fragment" />
 </navigation>

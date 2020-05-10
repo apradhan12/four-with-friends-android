@@ -10,4 +10,11 @@
     <string name="hello_first_fragment">he know da lingo</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="drop">Drop Token</string>
+    <string name="game_fragment">Game Fragment</string>
+    <string name="loading_text">Loading...</string>
+    <string name="host_ip_default">localhost</string>
+    <string name="port_number_default">16789</string>
+    <string name="host_ip_text">Host IP</string>
+    <string name="port_number_text">Port number</string>
+    <string name="connect_text">Connect</string>
 </resources>
