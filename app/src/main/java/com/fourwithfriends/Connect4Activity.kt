@@ -8,7 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.fourwithfriends.client.*
 import com.fourwithfriends.dto.PlayerColor
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.connect4_activity.*
 
 class Connect4Activity : AppCompatActivity() {
 
